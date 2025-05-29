@@ -9,19 +9,19 @@ from grafikler import (
 )
 from frekans_analizi import ses_temizle
 
-# 1. Temizleme işlemi yap
+#  Temizleme işlemi
 y_orig, y_clean, sr = ses_temizle()
 
-# 2. Grafiksel analiz
-# Orijinal ses
+# Grafikler
+# Orijinal ses için
 plot_waveform(y_orig, sr, "Orijinal Ses")
 plot_spectrogram(y_orig, sr, "Orijinal Ses")
 
-# Temizlenmiş ses
+# Temiz ses için
 plot_waveform(y_clean, sr, "Temizlenmiş Ses")
 plot_spectrogram(y_clean, sr, "Temizlenmiş Ses")
 
-# Karşılaştırmalı grafikler
+# Karşılaştırma
 plot_overlay_waveform(y_orig, y_clean, sr)
 plot_side_by_side_spectrograms(y_orig, y_clean, sr)
 plot_difference_waveform(y_orig, y_clean, sr)

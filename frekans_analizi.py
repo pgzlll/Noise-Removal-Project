@@ -26,7 +26,7 @@ def ses_temizle(girdi_dosyasi="veriler/Kayit.wav", cikti_dosyasi="veriler/temiz.
         boundary='zeros'
     )
 
-    # 3. Genlik, güç hesapla
+    # 3. Genlik, güç hesabı
     magnitude = np.abs(Zxx)
     power = magnitude ** 2
     n_frames = power.shape[1]
@@ -75,10 +75,10 @@ def ses_temizle(girdi_dosyasi="veriler/Kayit.wav", cikti_dosyasi="veriler/temiz.
 
             power_clean[f, t] = cleaned_power
 
-    # 7. Median filtre ile ilk yumuşatma
+    # 7. Median filtre ile yumuşatma
     power_clean_smooth = median_filter(power_clean, size=(3, 3))
 
-    # 8. Gaussian filtre ile ikinci yumuşatma
+    # 8. Gaussian filtre ile yumuşatma
     power_clean_smooth = gaussian_filter(power_clean_smooth, sigma=0.3)
 
     # 9. Genlik matrisi
@@ -92,7 +92,7 @@ def ses_temizle(girdi_dosyasi="veriler/Kayit.wav", cikti_dosyasi="veriler/temiz.
     Zxx_clean_imag_smooth = signal.wiener(Zxx_clean_imag, 5)
     Zxx_clean = Zxx_clean_real_smooth + 1j * Zxx_clean_imag_smooth
 
-    # 11. Fazı koruyarak ISTFT ile sinyali yeniden inşa et
+    # 11. Fazı koruyarak ISTFT ile sinyali yeniden oluştur
     _, y_clean = signal.istft(
         Zxx_clean,
         fs=sr,
@@ -103,13 +103,13 @@ def ses_temizle(girdi_dosyasi="veriler/Kayit.wav", cikti_dosyasi="veriler/temiz.
         boundary=True
     )
 
-    # 12. Normalize
+    # 12. Normalizasyon
     peak_orig = np.max(np.abs(y))
     peak_clean = np.max(np.abs(y_clean))
     if peak_clean > 1e-9:
         y_clean = y_clean * (peak_orig / peak_clean)
 
-    # 13. Kırpma
+    # 13. Klip
     y_clean = np.clip(y_clean, -1.0, 1.0)
 
     # 14. Kaydet
