@@ -23,12 +23,14 @@ Proje_Sinyal/
 │   ├── Kayit.wav         → Orijinal ses dosyası
 │   └── temiz.wav         → Yeni ses dosyası (Temizlenmiş)
 │
+├── ses_kaydi.py          → Sesi kaydeder.
 ├── frekans_analizi.py    → Gürültü giderme algoritmaları kullanılan python dosyası
 ├── grafikler.py          → Ses doyalarının grafiklerini oluşturan python dosyası
 └── main.py               → Projeyi çalıştıran ana dosya
 
 ## GEREKLİ KÜTÜPHANELER
 
+Python 3.13.3 ile çalışır.
 Projenin çalışabilmesi için ihtiyacımız olan Python kütüphaneleri:
 
 - numpy
@@ -51,7 +53,8 @@ pip3 install numpy scipy matplotlib soundfile
 python main.py 
 
 Dosyayı koşturduktan sonra gerçekleşek olan adımlar:
-- İlk olarak ' frekans_analizi.py ' dosyası içindeki fonksiyon çağrılır (ses_temizle) böylece 'veriler/Kayit.wav' dosyası işlenir.
+- İlk olarak  "Yeni ses kaydı oluşturmak ister misiniz (e/h): " şeklinde bir seçenek çıkacak. e seçilirse yeni bir ses kaydı alınır. h seçilirse veriler klasöründe olan mevcut bir ses kaydı girilir.
+- ' frekans_analizi.py ' dosyası içindeki fonksiyon çağrılır (ses_temizle) böylece ses dosyası işlenir.
 - Ses temizleme işlemlerinin ardından temizlenmiş ses 'veriler/temiz.wav' şeklinde kaydedilir.
 - Son olarak orijinal ve temizlenmiş sese ait grafik analizleri sırasıyla gösterilir.
 
