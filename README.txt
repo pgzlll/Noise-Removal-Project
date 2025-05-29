@@ -1,12 +1,21 @@
-GÜRÜLTÜ GİDERME VE SES TEMİZLEME PROJESİ
-========================================
+## GÜRÜLTÜ GİDERME VE SES TEMİZLEME PROJESİ
 
+## Proje Tanımı
 Bu proje, verilen bir ses dosyasını okuyarak gürültü giderme işlemlerini uygular ve temizlenmiş ses dosyasını oluşturur.
 Ayrıca orijinal ve temiz seslerin dalga formları ve spektrogramları grafik olarak gösterilir.
 
+## İçerik
+- Klasör Yapısı
+- Kullanılan kütüphaneler
+- Çalıştırma Talimatı
+- Grafik Analizi 
+- Notlar 
 
-KLASÖR YAPISI
-----------------
+---
+
+
+## KLASÖR YAPISI
+
 
 Proje_Sinyal/
 │
@@ -18,8 +27,7 @@ Proje_Sinyal/
 ├── grafikler.py          → Ses doyalarının grafiklerini oluşturan python dosyası
 └── main.py               → Projeyi çalıştıran ana dosya
 
-GEREKLİ KÜTÜPHANELER
----------------------
+## GEREKLİ KÜTÜPHANELER
 
 Projenin çalışabilmesi için ihtiyacımız olan Python kütüphaneleri:
 
@@ -28,13 +36,14 @@ Projenin çalışabilmesi için ihtiyacımız olan Python kütüphaneleri:
 - matplotlib
 - soundfile
 
-Kütüphane kurulumu için terminalden şunu yazıp çalıştırabilirsiniz:
+Kütüphane kurulumu için terminalden aşağıdaki komutu yazıp çalıştırabilirsiniz:
 
+``` bash
 pip3 install numpy scipy matplotlib soundfile
 
 
-ÇALIŞTIRMA TALİMATI
--------------------
+## ÇALIŞTIRMA TALİMATI
+
 
 1. `veriler/` klasörüne `Kayit.wav` adında bir WAV dosyası ekleyin. (Mono veya stereo olabilir.)
 2. `main.py` dosyasını çalıştırın: Aşağıdaki komut ile çalıştırın
@@ -46,8 +55,7 @@ Dosyayı koşturduktan sonra gerçekleşek olan adımlar:
 - Ses temizleme işlemlerinin ardından temizlenmiş ses 'veriler/temiz.wav' şeklinde kaydedilir.
 - Son olarak orijinal ve temizlenmiş sese ait grafik analizleri sırasıyla gösterilir.
 
-GRAFİK ANALİZLERİ
------------------
+## GRAFİK ANALİZLERİ
 
 Program koşturulduktan sonra gösterilecek olan grafiklerin sırası aşağıdaki gibi olacaktır.
 
@@ -61,8 +69,7 @@ Program koşturulduktan sonra gösterilecek olan grafiklerin sırası aşağıda
 - Spektrogram farkı
 
 
-NOTLAR
-------
+## NOTLAR
 
 - Orijinal sesin bozuk olması temizleme verimliliğini etkileyebilir.
 - ses_temizleme fonkisyonundaki bazı sabitler ihtiyaca göre yeniden ayarlanabilir.
