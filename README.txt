@@ -1,32 +1,6 @@
-
-Kullanım Talimatları:
----------------------
-1. Proje klasörünüzün içinde "veriler" adlı bir klasör oluşturun.
-2. Temizlenecek ses dosyasını "veriler" klasörüne "Kayit.wav" ismiyle koyun.
-3. Aşağıdaki komut ile projeyi çalıştırın:
-
-   ```bash
-   python main.py
-
-Program çalıştıktan sonra:
-
-"veriler/temiz.wav" dosyası oluşturulacak.
-
-Orijinal ve temiz seslerin dalga formları ve spektrogram grafiklerini göreceksiniz.
-
-Ayrıca dalga formu karşılaştırma ve fark grafiklerini içeren pencereler açılacak.
-
-
-Notlar:
-Python 3.x ve gerekli kütüphaneler (numpy, scipy, soundfile, matplotlib) yüklü olmalıdır.
-
-Kütüphane yüklemek için aşağıdaki komutu kullanabilirsiniz:
-
-pip install numpy scipy soundfile matplotlib
-
-
 GÜRÜLTÜ GİDERME VE SES TEMİZLEME PROJESİ
 ========================================
+
 Bu proje, verilen bir ses dosyasını okuyarak gürültü giderme işlemlerini uygular ve temizlenmiş ses dosyasını oluşturur.
 Ayrıca orijinal ve temiz seslerin dalga formları ve spektrogramları grafik olarak gösterilir.
 
