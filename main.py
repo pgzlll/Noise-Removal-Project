@@ -40,6 +40,11 @@ def ana_program():
     plot_waveform(y_clean, sr, "Temizlenmiş Ses")
     plot_spectrogram(y_clean, sr, "Temizlenmiş Ses")
 
+
+    min_len = min(len(y_orig), len(y_clean))
+    y_orig = y_orig[:min_len]
+    y_clean = y_clean[:min_len]
+
     plot_overlay_waveform(y_orig, y_clean, sr)
     plot_side_by_side_spectrograms(y_orig, y_clean, sr)
     plot_difference_waveform(y_orig, y_clean, sr)
