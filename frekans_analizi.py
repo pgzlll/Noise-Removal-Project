@@ -120,3 +120,4 @@ def ses_temizle(girdi_dosyasi="veriler/Kayit.wav", cikti_dosyasi="veriler/temiz.
     print(f"İşlem tamamlandı, '{cikti_dosyasi}' dosyası oluşturuldu.")
 
     return y, y_clean, sr  # Grafik için döndür
+
